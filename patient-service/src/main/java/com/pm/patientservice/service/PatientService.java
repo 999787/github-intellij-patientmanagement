@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class PatientService {
+public class  PatientService {
     private final PatientRepository patientRepository;
     private final BillingServiceGrpcClient billingServiceGrpcClient;
     private final kafkaProducer kafkaProducer;
@@ -26,7 +26,7 @@ public class PatientService {
                           kafkaProducer kafkaProducer) {
         this.patientRepository = patientRepository;
         this.billingServiceGrpcClient = billingServiceGrpcClient;
-        this.kafkaProducer = kafkaProducer;
+        this.kafkaProducer = kafkaProducer; // This is called DEPENDENCY INJECTION.
     }
 
     public List<PatientResponseDTO> getPatients (){
